@@ -1,0 +1,15 @@
+C:\Users\alexandr\Documents\ЛЧ\Csharp\BJ\bin\Debug\net6.0\BJ.exe
+C:\Users\alexandr\Documents\ЛЧ\Csharp\BJ\bin\Debug\net6.0\BJ.deps.json
+C:\Users\alexandr\Documents\ЛЧ\Csharp\BJ\bin\Debug\net6.0\BJ.runtimeconfig.json
+C:\Users\alexandr\Documents\ЛЧ\Csharp\BJ\bin\Debug\net6.0\BJ.dll
+C:\Users\alexandr\Documents\ЛЧ\Csharp\BJ\bin\Debug\net6.0\BJ.pdb
+C:\Users\alexandr\Documents\ЛЧ\Csharp\BJ\obj\Debug\net6.0\BJ.csproj.AssemblyReference.cache
+C:\Users\alexandr\Documents\ЛЧ\Csharp\BJ\obj\Debug\net6.0\BJ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alexandr\Documents\ЛЧ\Csharp\BJ\obj\Debug\net6.0\BJ.AssemblyInfoInputs.cache
+C:\Users\alexandr\Documents\ЛЧ\Csharp\BJ\obj\Debug\net6.0\BJ.AssemblyInfo.cs
+C:\Users\alexandr\Documents\ЛЧ\Csharp\BJ\obj\Debug\net6.0\BJ.csproj.CoreCompileInputs.cache
+C:\Users\alexandr\Documents\ЛЧ\Csharp\BJ\obj\Debug\net6.0\BJ.dll
+C:\Users\alexandr\Documents\ЛЧ\Csharp\BJ\obj\Debug\net6.0\refint\BJ.dll
+C:\Users\alexandr\Documents\ЛЧ\Csharp\BJ\obj\Debug\net6.0\BJ.pdb
+C:\Users\alexandr\Documents\ЛЧ\Csharp\BJ\obj\Debug\net6.0\BJ.genruntimeconfig.cache
+C:\Users\alexandr\Documents\ЛЧ\Csharp\BJ\obj\Debug\net6.0\ref\BJ.dll
