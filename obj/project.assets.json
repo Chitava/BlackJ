@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexandr\\Documents\\ЛЧ\\Csharp\\BJ\\BJ.csproj",
-      "projectName": "BJ",
-      "projectPath": "C:\\Users\\alexandr\\Documents\\ЛЧ\\Csharp\\BJ\\BJ.csproj",
+      "projectUniqueName": "C:\\Users\\alexandr\\Documents\\ЛЧ\\Csharp\\BlackJ\\BlackJ.csproj",
+      "projectName": "BlackJ",
+      "projectPath": "C:\\Users\\alexandr\\Documents\\ЛЧ\\Csharp\\BlackJ\\BlackJ.csproj",
       "packagesPath": "C:\\Users\\alexandr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexandr\\Documents\\ЛЧ\\Csharp\\BJ\\obj\\",
+      "outputPath": "C:\\Users\\alexandr\\Documents\\ЛЧ\\Csharp\\BlackJ\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alexandr\\AppData\\Roaming\\NuGet\\NuGet.Config"
