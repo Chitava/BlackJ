@@ -1,29 +1,10 @@
-﻿//string[] cards = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Валет", "Дама", "Король", "Туз"};
-string[] cards = {"Валет", "Дама", "Король", "Туз"};
+﻿string[] cards = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Валет", "Дама", "Король", "Туз"};
 string[] cardsUser = new string [30];
 string[] cardsComp = new string [30];
 int sumUser = 0, sumComp = 0, i = 2, cardsMoveValue = 0, numbCards = 0, u=0, c = 0;
 string cardsValue = "";
+
 int Exchenge(string card)
-{
-switch (card)
-{
-case "Валет":
-cardsValue = "1";
-break;
-case "Дама":
-cardsValue = "2";
-break;
-case "Король":
-cardsValue = "3";
-break;
-case "Туз":
-cardsValue = "4";
-break;
-}
-return Convert.ToInt32(cardsValue);
-}
-/*string Exchenge(string card)
 {
 switch (card)
 {
@@ -67,8 +48,8 @@ case "Туз":
 cardsValue = "11";
 break;
 }
-return cardsValue;
-}*/
+return Convert.ToInt32(cardsValue);
+}
 
 void userMove (int i)
 {
@@ -153,7 +134,7 @@ Console.Clear();
                         Console.WriteLine();
                         Console.WriteLine("У Вас ");
                         u = new Random().Next(0, cards.Length-1);
-                        userMoveS(i);                       
+                        userMoveS(i-1);                       
                             for (int j = 0; j < i; j++){
                                 Console.Write(cardsUser[j] + " | ");
                             }
@@ -166,16 +147,39 @@ Console.Clear();
                         Console.WriteLine("Сожалею но я победил");
                         goto end;
                     }//Проигрыш
-                    }//Меньше 21, ход компа
+                    }else{
+                        while (sumComp <= 21){
+                            Console.WriteLine(); 
+                            Console.WriteLine("У меня ");
+                            c = new Random().Next(0, cards.Length-1);
+                            compMoveS(i-1);
+                            for (int j = 0; j < i; j++){
+                                Console.Write(cardsComp[j] + " | ");
+                            }
+                        i++;
+                        Console.WriteLine();       
+                        Console.Write("(Количество очков = " + sumComp + ")");
+                    if (sumComp > sumUser){
+                    goto loos;   
+                    }else if (sumComp < sumUser){
+                    goto win;   
+                    }else{
+                    goto r;    
+                    }
+                    }
+                    }
+                    
+                        //Меньше 21, ход компа
                     Console.WriteLine();
                     Console.WriteLine("У меня ");
                     c = new Random().Next(0, cards.Length-1);
-                    compMoveS(i);
+                    compMoveS(i-1);
                         for (int j = 0; j < i; j++){
                             Console.Write(cardsComp[j] + " | ");
                         }
-                    i++;       
-                Console.Write("(Количество очков = " + sumComp + ")");
+                    i++;
+                    Console.WriteLine();       
+                    Console.WriteLine("(Количество очков = " + sumComp + ")");
                     if (sumComp == 21){//если 21 то победа
                         Console.WriteLine();
                         Console.WriteLine("У меня 21. Мои сожаления но победа моя");
@@ -183,18 +187,28 @@ Console.Clear();
                     }//если 21 то победа
                     else if (sumComp > 21){//Проигрыш компа
                         Console.WriteLine();
+    
                         Console.WriteLine("Мои поздравления!!! Вы победили!!! у меня " + sumComp + " это больше 21" );
                         goto end;
                     }
+                    
+                    
             }while (sumUser <= 21 || sumComp <= 21);
               
         }
     }   
 }
-
+win:
+Console.WriteLine();
+Console.WriteLine("Мои поздравления!!! Вы победили!!!");
+r:
+Console.WriteLine("На этот раз ничья");
+loos:
+Console.WriteLine();
+Console.WriteLine("Победа моя!");
 end:
+Console.WriteLine();
 Console.WriteLine("Благодарю за игру !");
-
 
 
 
