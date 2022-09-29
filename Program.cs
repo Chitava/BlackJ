@@ -1,8 +1,8 @@
 ﻿string[] cards = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Валет", "Дама", "Король", "Туз"};
-string[] cardsUser = new string [30];
-string[] cardsComp = new string [30];
-int sumUser = 0, sumComp = 0, i = 2, cardsMoveValue = 0, numbCards = 0, u=0, c = 0;
-string cardsValue = "";
+string[] userCards = new string [5];
+string[] compCards = new string [5];
+int userSum = 0, compSum = 0, userCardsMoveValue = 0, compCardsMoveValue=0, i = 0, j = 0;
+string cardsValue = "", userName = String.Empty;
 
 int Exchenge(string card)
 {
@@ -50,11 +50,222 @@ break;
 }
 return Convert.ToInt32(cardsValue);
 }
+void userMove ( string[] arr, int i)
+{
+ string userCard = cards[new Random().Next (0, cards.Length)];
+ userCards[i] = userCard;
+ userCardsMoveValue = Exchenge(userCard);
+ userSum = userSum + userCardsMoveValue;
+ //return userCards[i];
+}
+void compMove ( string[] arr, int i)
+{
+ string compCard = cards[new Random().Next (0, cards.Length)];
+ compCards[j] = compCard;
+ compCardsMoveValue = Exchenge(compCard);
+ compSum = compSum + compCardsMoveValue;
+ //return compCards[j];
+}
+void userResult (int sum)
+{
+    if (sum > 21) 
+    {   Console.WriteLine("Сожалею, но Вы проиграли");
+        Console.WriteLine("Возвращайтесь снова, до скорых встреч"); 
+    }
+    else if (sum == 21) 
+    {   Console.WriteLine("Поздравляю Вы победили!!!");
+        Console.WriteLine("Возвращайтесь снова, до скорых встреч");
+    } 
+    else if (sum == compSum) 
+    {   Console.WriteLine("На этот раз ничья");
+        Console.WriteLine("Возвращайтесь снова, до скорых встреч");
+    } 
+    
+    
+}
+void compResult (int sum)
+{
+    if (sum > 21) 
+    {   Console.WriteLine("Сожалею, но проиграл я");
+        Console.WriteLine("Возвращайтесь снова, до скорых встреч");
+    } 
+    else if (sum == 21) 
+    {Console.WriteLine("Моя победа!!!");
+        Console.WriteLine("Возвращайтесь снова, до скорых встреч"); 
+    }
+    else if (sum == userSum) 
+    {   Console.WriteLine("На этот раз ничья");
+        Console.WriteLine("Возвращайтесь снова, до скорых встреч");
+    } 
+    
+}
+void result (int sum)
+{
+    if (sum> compSum) 
+    {   Console.WriteLine("Поздравляю Вы оказались удачливее!!!");
+        Console.WriteLine("Возвращайтесь снова, до скорых встреч");
+    } 
+    else if (sum < compSum) 
+    {   Console.WriteLine("Победа моя!!!");
+        Console.WriteLine("Возвращайтесь снова, до скорых встреч");
+    } 
+    else if (sum == compSum) 
+    {
+    Console.WriteLine("На этот раз ничья");
+    Console.WriteLine("Возвращайтесь снова, до скорых встреч");
+    } 
+}
+Console.Clear();
+Console.WriteLine("Добрый день!");
+Console.WriteLine("Представтесь пожалуйста ");
+userName = Console.ReadLine();
+Console.Clear();
+Console.WriteLine( userName + " сегодня играем с тобой. Учти что я очень азартен!!!");
+int move = 2;//new Random().Next(1, 3);
+if (move %2 ==0){
+    Console.WriteLine("Выпало " + move + " четное. Ваш ход " + userName);
+    Console.WriteLine("У Вас на руках");
+    for (i = 0; i < 2; i++){ 
+        userMove(cards, i);
+        Console.Write(userCards[j] + " | ");
+    }
+    Console.WriteLine ("Сумма очков у Вас- " + userSum);
+    Console.WriteLine ("У меня на руках");
+    for (j = 0; j < 2; j++){ 
+        compMove(cards, j);
+        Console.Write(compCards[j] + " | ");
+    }
+    Console.WriteLine ("Сумма очков у меня - " + compSum);
+    if (userSum >= 21){ 
+        userResult(userSum);
+        goto end;
+    }
+    else if (compSum >= 21){ 
+        compResult(compSum);
+        goto end;
+        }
+    //i = 2;
+    //j = 2;
+    while(userSum <= 21){
+        Console.WriteLine(userName + " берем еще?");
+        string yesOrNo = Console.ReadLine();
+        if (yesOrNo == "да"){
+            Console.WriteLine("У Вас на руках");
+            userMove(cards, i);
+            for (int k = 0; k <= i; k++){    
+                Console.Write(userCards[k] + " | ");
+            }
+            i++;
+            Console.WriteLine (" у Вас сумма очков - " + userSum);
+                if (userSum <=21){
+                    Console.WriteLine ("У меня на руках");
+                    compMove(cards, j);
+                    for (int k = 0; k <= j; k++){ 
+                        Console.Write(compCards[k] + " | ");
+                    }
+                Console.WriteLine ("Сумма очков у меня - " + compSum);
+                j++;
+                }
+        }else{
+            while (compSum <= 21){
+                if (compSum < 21){
+                    Console.WriteLine ("У меня на руках");
+                    compMove(cards, j);
+                        for (int k = 0; k <= j; k++){ 
+                            Console.Write(compCards[k] + " | ");
+                        }
+                        Console.WriteLine("Сумма очков у меня - " + compSum);
+                        j++;
+                }
+            }
+        }
+        Console.WriteLine();
+        if (userSum >= 21){
+            userResult(userSum);
+            goto end;
+        }
+        else if (compSum >= 21){
+            compResult(compSum);
+            goto end;
+        }
+        else{ 
+            result (userSum);
+            goto end;
+        }
+    }
+}
+end:;
 
-void userMove (int i)
+
+    /*Console.WriteLine("Выпало " + move + " четное. Ваш ход " + userName);
+    Console.WriteLine("У Вас на руках");
+    for (; i < 2; i++){ 
+        userMove(cards);
+        Console.Write(userCards[i] + " | ");
+    }
+    Console.WriteLine ("Сумма очков - " + userSum);
+    Console.WriteLine ("У меня на руках");
+    for (; j < 2; j++){ 
+        compMove(cards);
+        Console.Write(compCards[j] + " | ");
+    }
+    Console.WriteLine ("Сумма очков - " + compSum);
+    if (userSum <= 21 || compSum <= 21){
+        i = 2;
+        j = 2;
+        do{
+            Console.WriteLine(userName + " берем еще?");
+            string yesOrNo = Console.ReadLine();
+                if (yesOrNo == "да"){
+                    Console.WriteLine("У Вас на руках");
+                        for (int k = 0; k < i; k++){ 
+                            userMove(cards);
+                            Console.Write(userCards[i] + " | ");
+                        }
+            Console.WriteLine (" у Вас сумма очков - " + userSum);
+            i++;
+                if (userSum <21){
+                    Console.WriteLine ("У меня на руках");
+                    for (int k = 2; k < j; k++){ 
+                        compMove(cards);
+                        Console.Write(compCards[j] + " | ");
+                    }
+                }    
+            }do{
+            Console.WriteLine ("У меня на руках");
+                for (int k = 0; k < j; k++){ 
+                    compMove(cards);
+                    Console.Write(compCards[j] + " | ");
+                }
+            Console.WriteLine (" у меня сумма очков - " + compSum);
+            j++;
+           
+            }while(compSum <= 21);
+        }while(userSum <= 21 || compSum <= 21);
+        
+           
+        
+   
+    }else if (compSum > 21){    
+        userResult(userSum);
+    }else compResult(compSum);
+
+
+}
+
+
+
+
+
+    
+
+
+
+/*void userMove (int i)
 {
 int k = new Random().Next(0, cards.Length-1);
 cardsUser[i] = cards[k];
+
 }
 
 void compMove (int i)
@@ -230,7 +441,7 @@ Console.WriteLine("Благодарю за игру !");
 
 
 
-   /* }else{
+   }else{
     Первым ходит комп
 
 
@@ -256,36 +467,3 @@ Console.WriteLine("До скорых встреч");
 
 
 
-
-/*
-
-
-    Console.WriteLine();
-    Console.WriteLine("У меня ");
-     i = new Random().Next(0, cards.Length-1);
-    cardsComp[i] = cards[i];
-    cardsMoveValue = MoveValue(cards);
-    sumComp = sumComp + Convert.ToInt32(cardsMoveValue);
-    for (int j = 0; j <= i; j++){
-    Console.Write(cardsComp[j] + " | ");
-    }       
-    Console.Write("(Количество очков = " + sumComp + ")");
-    if (sumComp == 21){//если 21 то победа
-    Console.WriteLine();
-    Console.WriteLine("У меня 21. Мои сожаления но победа моя");
-    }//если 21 то победа
-    else if (sumComp > 21){//Проигрыш компа
-        Console.WriteLine("Мои поздравления!!! Вы победили!!! у меня " + sumComp + " это больше 21" );
-    }//Проигрыш компа
-    }}
-
-
-//Первый ход ход игрока
-}}}else{//Первый ход компа
-
-//Первый ход компа
-//жеребьевка
-else{//Проверка на согласие играть
-Console.WriteLine("Ну что же, в другой раз сыграем обязательно!!!");
-Console.WriteLine("До скорых встреч"); 
-}}*/

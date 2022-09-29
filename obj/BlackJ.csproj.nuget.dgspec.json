@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexandr\\Documents\\ЛЧ\\Csharp\\BlackJ\\BlackJ.csproj": {}
+    "D:\\Личное\\Java\\BlackJ\\BlackJ.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexandr\\Documents\\ЛЧ\\Csharp\\BlackJ\\BlackJ.csproj": {
+    "D:\\Личное\\Java\\BlackJ\\BlackJ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexandr\\Documents\\ЛЧ\\Csharp\\BlackJ\\BlackJ.csproj",
+        "projectUniqueName": "D:\\Личное\\Java\\BlackJ\\BlackJ.csproj",
         "projectName": "BlackJ",
-        "projectPath": "C:\\Users\\alexandr\\Documents\\ЛЧ\\Csharp\\BlackJ\\BlackJ.csproj",
-        "packagesPath": "C:\\Users\\alexandr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexandr\\Documents\\ЛЧ\\Csharp\\BlackJ\\obj\\",
+        "projectPath": "D:\\Личное\\Java\\BlackJ\\BlackJ.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Личное\\Java\\BlackJ\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\alexandr\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -53,7 +56,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
