@@ -142,15 +142,15 @@ void cardImage (string card)
         start(x,y+1);
         Console.WriteLine("|            |");
         start(x,y+2);
-        Console.WriteLine("|  ********  |");
+        Console.WriteLine("|   *******  |");
         start(x,y+3);
-        Console.WriteLine("|     *      |");
+        Console.WriteLine("|          * |");
         start(x,y+4);
-        Console.WriteLine("|  ********  |");
+        Console.WriteLine("|      ****  |");
         start(x,y+5);
-        Console.WriteLine("|      *     |");
+        Console.WriteLine("|          * |");
         start(x,y+6);
-        Console.WriteLine("|    *       |");
+        Console.WriteLine("|   *******  |");
         start(x,y+7);
         Console.WriteLine(" ~~~~~~~~~~~~ ");
         break;
@@ -396,7 +396,8 @@ if (move %2 ==0){
             Console.WriteLine("У Вас на руках");
             userMove(cards, i);
             for (int k = 0; k <= i; k++){    
-                Console.Write(userCards[k] + " | ");
+                x = (Console.CursorLeft+18)*i;
+                cardImage (userCards[i]);
             }
             i++;
             Console.WriteLine (" у Вас сумма очков - " + userSum);
@@ -404,7 +405,8 @@ if (move %2 ==0){
                     Console.WriteLine ("У меня на руках");
                     compMove(cards, j);
                     for (int k = 0; k <= j; k++){ 
-                        Console.Write(compCards[k] + " | ");
+                        x = (Console.CursorLeft+18)*j;
+                        cardImage (compCards[j]);
                     }
                 
                 Console.WriteLine ("Сумма очков у меня - " + compSum);
@@ -415,7 +417,8 @@ if (move %2 ==0){
                 Console.WriteLine ("У меня на руках");
                 compMove(cards, j);
                     for (int k = 0; k <= j; k++){ 
-                        Console.Write(compCards[k] + " | ");
+                        x = (Console.CursorLeft+18)*j;
+                        cardImage (compCards[j]);
                     }
                 Console.WriteLine("Сумма очков у меня - " + compSum);
                 j++;
@@ -427,14 +430,16 @@ if (move %2 ==0){
     Console.WriteLine ("У меня на руках");
         for (j = 0; j < 2; j++){ 
             compMove(cards, j);
-            Console.Write(compCards[j] + " | ");
+            x = (Console.CursorLeft+18)*j;
+            cardImage (compCards[j]);
             }
         j++;
         Console.WriteLine ("Сумма очков у меня - " + compSum);
         Console.WriteLine("У Вас на руках");
         for (i = 0; i < 2; i++){ 
             userMove(cards, i);
-            Console.Write(userCards[i] + " | ");
+            x = (Console.CursorLeft+18)*i;
+            cardImage (userCards[i]);
         }
         Console.WriteLine ("Сумма очков у Вас - " + compSum);
         i++;
@@ -443,8 +448,9 @@ if (move %2 ==0){
         Console.WriteLine ("У меня на руках");
         compMove(cards, j);
             for (int k = 0; k <= j; k++){ 
-                Console.Write(compCards[k] + " | ");
-                }
+                x = (Console.CursorLeft+18)*j;
+                cardImage (compCards[j]);
+            }
         Console.WriteLine ("Сумма очков у меня - " + compSum);
         j++;
     }
@@ -455,7 +461,8 @@ if (move %2 ==0){
         Console.WriteLine("У Вас на руках");
             userMove(cards, i);
             for (int k = 0; k <= i; k++){    
-                Console.Write(userCards[k] + " | ");
+                x = (Console.CursorLeft+18)*i;
+                cardImage (userCards[i]);
             }
             i++;
         Console.WriteLine ("Сумма очков у меня - " + compSum);
